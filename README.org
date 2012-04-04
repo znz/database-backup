@@ -1,0 +1,26 @@
+* Database Backup Scripts
+** About
+This scripts dump databases only.
+Use other backup programs to copy dump to other locations.
+** How to use
+- choose DATABASE_BACKUP_TOP_DIR
+  - example: DATABASE_BACKUP_TOP_DIR=/home/_database
+- git clone git://github.com/znz/database-backup.git $DATABASE_BACKUP_TOP_DIR
+- cd $DATABASE_BACKUP_TOP_DIR
+- pager init.sh
+- sudo ./init.sh
+** Requirements
+- Debian or Ubuntu
+- /bin/sh
+- /etc/cron.daily
+- tmpreaper
+- ionice
+*** When dump MySQL
+- /var/lib/mysql
+- /usr/bin/mysqldump and /etc/mysql/debian.cnf
+- xz
+*** When dump PostgreSQL
+- /var/lib/postgresql
+- /usr/bin/pg_dump
+** License
+MIT License. Copyright (C) 2012 Kazuhiro NISHIYAMA
