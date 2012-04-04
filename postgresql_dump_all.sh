@@ -2,9 +2,13 @@
 set -e
 umask 077
 ionice -c2 -n7 -p$$
-cd "$(dirname $0)/pg_dump"
+
+cd "$(dirname $0)/dump/pg_dump"
+mkdir -p "$BACKUP_DIR"
 BACKUP_DIR="$(pwd)"
+
 cd /
+
 PG_DUMP="/usr/bin/pg_dump -Fc"
 PG_DATABASES=$( su postgres -c "psql -c 'SELECT datname FROM pg_database;'" | egrep '^ [^ ]' | egrep -v '^ template[01]$|^ postgres$' )
 
