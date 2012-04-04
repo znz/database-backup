@@ -3,8 +3,9 @@ set -e
 umask 077
 ionice -c2 -n7 -p$$
 
-cd "$(dirname $0)/dump/pg_dump"
+BACKUP_DIR="$(dirname $0)/dump/pg_dump"
 mkdir -p "$BACKUP_DIR"
+cd "$BACKUP_DIR"
 BACKUP_DIR="$(pwd)"
 
 cd /
