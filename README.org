@@ -22,5 +22,8 @@ Use other backup programs to copy dump to other locations.
 *** When dump PostgreSQL
 - /var/lib/postgresql
 - /usr/bin/pg_dump
+*** When slapcat
+- /var/lib/ldap
+- slapcat
 ** License
 MIT License. Copyright (C) 2012 Kazuhiro NISHIYAMA
