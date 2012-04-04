@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -d /var/lib/mysql ]; then
+    /bin/sh +x TOP_DIR/mysql_dump_all.sh
+fi
+
+if [ -d /var/lib/postgresql ]; then
+    /bin/sh +x TOP_DIR/postgresql_dump_all.sh
+fi

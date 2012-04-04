@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ -d /var/lib/mysql ]; then
-    /bin/sh +x /home/_database/mysql_dump_all.sh
-fi
-
-if [ -d /var/lib/postgresql ]; then
-    /bin/sh +x /home/_database/postgresql_dump_all.sh
-fi
