@@ -1,10 +1,11 @@
 #!/bin/sh -x
 set -e
-umask 077
 ionice -c2 -n7 -p$$
 
 BACKUP_DIR="$(dirname $0)/dump/mysqldump"
+umask 027
 mkdir -p "$BACKUP_DIR"
+umask 077
 
 MYSQL_DATABASES=$( find /var/lib/mysql -mindepth 1 -maxdepth 1 -name mysql -prune -o -type d -printf "%f\n" )
 
