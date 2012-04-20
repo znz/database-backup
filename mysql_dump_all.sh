@@ -7,7 +7,7 @@ umask 027
 mkdir -p "$BACKUP_DIR"
 umask 077
 
-MYSQL_DATABASES=$( find /var/lib/mysql -mindepth 1 -maxdepth 1 -name mysql -prune -o -type d -printf "%f\n" )
+MYSQL_DATABASES=$( find /var/lib/mysql -mindepth 1 -maxdepth 1 -name mysql -prune -o -name performance_schema -prune -o -type d -printf "%f\n" )
 
 # --opt is default after MySQL 5.1
 MYSQLDUMP="/usr/bin/mysqldump --defaults-file=/etc/mysql/debian.cnf --opt"
